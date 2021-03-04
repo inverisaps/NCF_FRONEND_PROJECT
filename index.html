@@ -20,19 +20,22 @@
           
                 <div>
                   <label for="RNC">RNC</label>
-                  <input type="number" type="" id="rnc" name="RNC" placeholder="RNC">
-                   <input class="button" id="Validador" type="submit" value="Validar">
+                  <input type="number" type="" id="rnc"onkeyup="this.value=Numeros(this.value)"min="1" max="999999999" name="RNC" required placeholder="RNC">
+                   <input class="button" id="Validador" type="submit"   value="Validar">
                 </div>
           
                 <div>
                   <label for="Nombre">Nombre</label>
-                  <input type="Nombre" id="Nombre" name="Nombre" placeholder="Nombre de la Compania  ">
+                  <input type="Nombre" id="Nombre" name="Nombre" placeholder="Nombre de la Compania" disabled>
                 </div>
-                <input class="button" id="Efectivo" type="submit" value="Efectivo">
-                <input class="button" id="Tarjeta" type="submit" value="Tarjeta">
-                    <div>
+                
+                <input class="button" id="Efectivo" type="submit" value="Monto">
+                
+                <input class="button" id="Tarjeta" type="submit" value="Monto">
+                   
+                <div>
                         <label for="Monto">Monto</label>
-                        <input type="number" id="Monto" name="Monto" placeholder="Monto">
+                        <input type="number" id="Monto"  required placeholder="Monto" disabled>
                       </div>
 
                   <input class="button" type="submit" value="Pagar">
