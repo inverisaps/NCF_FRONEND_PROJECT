@@ -1,109 +1,74 @@
-<html>
-    <head>
-          <title>Sistema Calipso V3.0</title>
-          <link href="css/app.css" rel="stylesheet" type="text/css">
-          <script src="app.js"></script>
-
-    </head>
-    <body>
-        <body class="align">
-
-            <div class="login">
-          
-              <header class="login__header">
-                <h2><svg class="icon">
-                    <use xlink:href="#icon-lock" />
-                  </svg>Sistema Calipso v3.0</h2>
-              </header>
-          
-              <form action="#" class="login__form" method="POST">
-          
-                <div>
-                  <label for="RNC">RNC</label>
-                  <input type="number" type="" id="rnc" name="RNC" placeholder="RNC">
-                   <input class="button" id="Validador" type="submit" value="Validar">
-                </div>
-          
-                <div>
-                  <label for="Nombre">Nombre</label>
-                  <input type="Nombre" id="Nombre" name="Nombre" placeholder="Nombre de la Compania  ">
-                </div>
-                <input class="button" id="Efectivo" type="submit" value="Efectivo">
-                <input class="button" id="Tarjeta" type="submit" value="Tarjeta">
-                    <div>
-                        <label for="Monto">Monto</label>
-                        <input type="number" id="Monto" name="Monto" placeholder="Monto">
-                      </div>
-
-                  <input class="button" type="submit" value="Pagar">
-                </div>
-          
-              </form>
-          
-            </div>
-          </body>
-          <script src="js/app.js"></script>
-    </body>
-    
-</html>
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <form name="Demo" action="" method="POST">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <title>FACTURACION</title>
+</head>
+<body>
+
+  <section class="teclado" id="teclado">
+    <div class="back button">
+
+    </div>
+    <div class="keyboard">
       <div>
-        <input type="button" value="Listar" onclick="soap()" />
+        <div class="div">1</div>
+        <div class="div">2</div>
+        <div class="div">3</div>
+      </div> 
+      <div>
+        <div class="div">4</div>
+        <div class="div">5</div>
+        <div class="div">6</div>
+        <div class="div">7</div>
       </div>
-    </form>
+      <div>
+        <div class="div">8</div>
+        <div class="div">9</div>
+        <div class="div">0</div>
+      </div>
+    </div>
+    <div class="next button">
 
-    <script>
-      let rnc = 0;
-      let server = "http://dgii.gov.do/wsMovilDGII/WSMovilDGII.asmx";
-      let sr =
-        '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">' +
-        "<soap:Body>" +
-        '<GetContribuyentes xmlns="http://dgii.gov.do/">' +
-        "<value>" +
-        rnc +
-        "</value>" +
-        "<patronBusqueda>0</patronBusqueda>" +
-        "<inicioFilas>0</inicioFilas>" +
-        "<filaFilas>0</filaFilas>" +
-        "<IMEI>?</IMEI>"+
-        "</GetContribuyentes>" +
-        "</soap:Body>" +
-        "</soap:Envelope>";
-      function soap(){
-        let xmlhttp = new XMLHttpRequest();
-        xmlhttp.open(
-          "POST",
-          server,
-          true
-        );
+    </div>
+  </section>
 
-        xmlhttp.onreadystatechange = function() {
-            console(xmlhttp.readyState);
-            if(xmlhttp.readyState == 4){
-                if(xmlhttp.status == 200) {
-                    alert('done. use firebug/ console to see network response');
-                }
-            }
-        }
-        //  xmlhttp.setRequestHeader('Content-Length','*');
-        xmlhttp.setRequestHeader('Access-Control-Allow-Headers', '*');
-       xmlhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
-        xmlhttp.setRequestHeader('Content-Type', 'text/xml');
-        
-        xmlhttp.send(sr);
-        console.log('response:  '+xmlhttp.responseXML);
+  <section class="form"> 
+    <h2>GENERAR COMPROBANTE</h2>
+    <div class="one">
+      <label  for="">RNC</label>
+      <div  class="rnc input " id="rnc-input">
+      123456789
+      </div>
+    </div>
+      
+  
+    <div class="one">
+    <label for="">NOMBRE DE LA COMPAÑIA</label>
+    <div class="nombre input" id="nombre-input">
+      JOSELITO MARTINEZ S.A.
+    </div>
+  </div>
+    <div class="metodo-pago">
+      <div class="efectivo pago" id="efectivo-pago"></div>
+      <div class="tarjeta pago" id="tarjeta-pago" ></div>
+    </div>
 
-      }
-    </script>
-  </body>
+  <div class="one">
+    <label for="">MONTO A PAGAR EN RD$</label>
+    <div class="nombre input selected" id="nombre-input">
+    RD$  223,500.00
+    </div>
+  </div>
+
+  </section>
+  <script src="js/responsive.js"></script>
+  
+</body>
 </html>
