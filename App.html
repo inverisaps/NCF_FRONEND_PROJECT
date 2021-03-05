@@ -1,0 +1,109 @@
+<html>
+    <head>
+          <title>Sistema Calipso V3.0</title>
+          <link href="css/app.css" rel="stylesheet" type="text/css">
+          <script src="app.js"></script>
+
+    </head>
+    <body>
+        <body class="align">
+
+            <div class="login">
+          
+              <header class="login__header">
+                <h2><svg class="icon">
+                    <use xlink:href="#icon-lock" />
+                  </svg>Sistema Calipso v3.0</h2>
+              </header>
+          
+              <form action="#" class="login__form" method="POST">
+          
+                <div>
+                  <label for="RNC">RNC</label>
+                  <input type="number" type="" id="rnc" name="RNC" placeholder="RNC">
+                   <input class="button" id="Validador" type="submit" value="Validar">
+                </div>
+          
+                <div>
+                  <label for="Nombre">Nombre</label>
+                  <input type="Nombre" id="Nombre" name="Nombre" placeholder="Nombre de la Compania  ">
+                </div>
+                <input class="button" id="Efectivo" type="submit" value="Efectivo">
+                <input class="button" id="Tarjeta" type="submit" value="Tarjeta">
+                    <div>
+                        <label for="Monto">Monto</label>
+                        <input type="number" id="Monto" name="Monto" placeholder="Monto">
+                      </div>
+
+                  <input class="button" type="submit" value="Pagar">
+                </div>
+          
+              </form>
+          
+            </div>
+          </body>
+          <script src="js/app.js"></script>
+    </body>
+    
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="Demo" action="" method="POST">
+      <div>
+        <input type="button" value="Listar" onclick="soap()" />
+      </div>
+    </form>
+
+    <script>
+      let rnc = 0;
+      let server = "http://dgii.gov.do/wsMovilDGII/WSMovilDGII.asmx";
+      let sr =
+        '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">' +
+        "<soap:Body>" +
+        '<GetContribuyentes xmlns="http://dgii.gov.do/">' +
+        "<value>" +
+        rnc +
+        "</value>" +
+        "<patronBusqueda>0</patronBusqueda>" +
+        "<inicioFilas>0</inicioFilas>" +
+        "<filaFilas>0</filaFilas>" +
+        "<IMEI>?</IMEI>"+
+        "</GetContribuyentes>" +
+        "</soap:Body>" +
+        "</soap:Envelope>";
+      function soap(){
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.open(
+          "POST",
+          server,
+          true
+        );
+
+        xmlhttp.onreadystatechange = function() {
+            console(xmlhttp.readyState);
+            if(xmlhttp.readyState == 4){
+                if(xmlhttp.status == 200) {
+                    alert('done. use firebug/ console to see network response');
+                }
+            }
+        }
+        //  xmlhttp.setRequestHeader('Content-Length','*');
+        xmlhttp.setRequestHeader('Access-Control-Allow-Headers', '*');
+       xmlhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+        xmlhttp.setRequestHeader('Content-Type', 'text/xml');
+        
+        xmlhttp.send(sr);
+        console.log('response:  '+xmlhttp.responseXML);
+
+      }
+    </script>
+  </body>
+</html>
