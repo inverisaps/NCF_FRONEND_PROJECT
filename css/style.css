@@ -1,47 +1,44 @@
 * {
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Roboto', sans-serif;
-
-    
+  padding: 0px;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
 }
-body{
-    background: #3a57afb2;
-    height: 300vh;
+body {
+
+
+  overflow-y: hidden;
 }
 .form {
-    width: 75%;
-   
-   background: white;
-    margin: 10px auto;
-    border-radius: 5px;
-    -webkit-box-shadow: 5px 10px 30px rgba(49, 49, 49, 0.287);
-    padding: 50px;
+  width: 100%;
+  background: white;
+  height: 300vh;
+ margin: 0px;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 10px 30px rgba(49, 49, 49, 0.287);
+
 }
 label {
-    color: #3b3b3b;
-    font-weight:600;
-    color:black;
-    font-size:25px;
+  color: #3b3b3b;
+  font-weight: 600;
+  color: black;
+  font-size: 25px;
 }
 
 .input {
-    background-color: #e7e7e7;
-    width: 75%;
-    height: 40px;
-    border-radius: 5px;
-    font-size:25px;
-    text-align: center; 
-    color:rgb(47, 47, 47);
-    font-weight:600;
-    padding-top: 10px;
-
+  background-color: #cecece;
+  width: 75%;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 25px;
+  text-align: center;
+  color: rgb(47, 47, 47);
+  font-weight: 600;
+  padding-top: 10px;
 }
 
 .one {
-    
-    margin-left:20%;
-    margin-bottom: 20px;
+  margin-left: 20%;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -51,65 +48,117 @@ h2 {
   color: #3a57af;
   font-size: 35px;
 }
-
 .selected {
-    background-color: #3a57af;
-    -webkit-border-radius: 4px 0px 0px 4px; 
-    -moz-border-radius: 4px 0px 0px 4px; 
-    border-radius: 4px 0px 0px 4px;
-    color: white;
-    -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
-    -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-    box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
-    border: solid 0px #cbc9c9;
-  }
-  
-  
-  .metodo-pago{
-    display: flex;
-    justify-content: center;
+background-color: #3a57af;
+-webkit-border-radius: 4px 0px 0px 4px;
+-moz-border-radius: 4px 0px 0px 4px;
+ border-radius: 4px 0px 0px 4px;
+ color: white;
+ -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);
+  -moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);
+  border: solid 0px #cbc9c9;
 
+}
+
+.metodo-pago {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.teclado {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  width: 100%;
+  height: 300px;
+  background: rgba(58, 58, 58, 0.781);
+}
+
+.keyboard {
+  width: 60%;
+  
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.colum-button {
+  margin: 0px;
+  padding: 0px;
+  width: 33%;
+  height: 300px;
+}
+
+.keyboard .div {
+  width: 100%;
+  height: 12vh;
+  margin: 0px;
+  font-size: xx-large;
+  font-weight: 900;
+  background: rgb(255, 255, 255);
+}
+.button {
+  width: 15%;
+  height: 100px;
+  background: #3a57af;
+  color: white;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:15px;
+}
+
+.method-pay{
+    display: flex;
+    width: 60%;
+justify-content: center;
 }
 .pago {
-    width: 150px;
-    height: 70px;
-    background: gray;
-    margin:10px;
-}  
-.teclado{
-    display: flex;
-    justify-content: center;
-   
-    position: fixed;
-    top: 50%;
-    width: 100%;
-    height: 300px;
-    background: rgba(58, 58, 58, 0.781);
-    
-}
-.keyboard {
-    width: 60%;
+    width: 200px;
     height: 100px;
+    background: rgb(195, 195, 195);
+    margin: 10px;
+    font-size:50px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-left: 10px;
     
-  
-}
-.keyboard .div{
-    width: 12em;
-    height: 13vh;
-    background: rgb(255, 255, 255);
-    margin: 1px;
-}
+  }
 
-.div:focus {
-    background: rgb(110, 109, 109);
-}
+  .efectivo{
+      color: #3a57af;
+     
+  }
+  .tarjeta {
+      color: #3a57af;
+  }
+  .pay-selected {
+    border: 5px solid #36c27c;
+  }
 
-.button{
-    width: 15%;
-    height: 100px;
-    background: crimson;
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.disable {
+    display: none;
+}

@@ -8,67 +8,70 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-  <title>FACTURACION</title>
+<script src="https://kit.fontawesome.com/4a3bc9cda7.js" crossorigin="anonymous"></script>  
+<title>FACTURACION</title>
 </head>
 <body>
 
   <section class="teclado" id="teclado">
     <div class="back button">
-
+      <i class="fas fa-arrow-left"></i>
     </div>
-    <div class="keyboard">
-      <div>
-        <div class="div">1</div>
-        <div class="div">2</div>
-        <div class="div">3</div>
+    <div class="keyboard ">
+      
+      <div class="colum-button">
+        <button class="div">1</button>
+        <button class="div">4</button>
+        <button class="div">7</button>
+        <button class="div">.</button>
       </div> 
-      <div>
-        <div class="div">4</div>
-        <div class="div">5</div>
-        <div class="div">6</div>
-        <div class="div">7</div>
+      <div class="colum-button">
+        <button class="div">2</button>
+        <button class="div">5</button>
+        <button class="div">8</button>
+        <button class="div">0</button>
       </div>
-      <div>
-        <div class="div">8</div>
-        <div class="div">9</div>
-        <div class="div">0</div>
+      <div class="colum-button">
+        <button class="div">3</button>
+        <button class="div">6</button>
+        <button class="div">9</button>
+        <button class="div"><i class="fas fa-backspace"></i></button>
       </div>
+    </div>
+    <div class="method-pay disable">
+      <div class="tarjeta pago" id="tarjeta-pago"><i class="fab fa-cc-visa"></i></div>
+      <div class="efectivo pago" id="efectivo-pago " ><i class="fas fa-money-bill-alt"></i></div>
     </div>
     <div class="next button">
-
+      <i class="fas fa-arrow-right"></i>
     </div>
   </section>
 
   <section class="form"> 
-    <h2>GENERAR COMPROBANTE</h2>
-    <div class="one">
-      <label  for="">RNC</label>
-      <div  class="rnc input " id="rnc-input">
-      123456789
-      </div>
-    </div>
-      
   
     <div class="one">
+      <label  for="">RNC</label>
+      <div  class="rnc input selected" id="rnc-input">
+     
+      </div>
+    </div>
+    
+    <div class="one">
     <label for="">NOMBRE DE LA COMPAÑIA</label>
-    <div class="nombre input" id="nombre-input">
-      JOSELITO MARTINEZ S.A.
+    <div style="font-size: 20px;" class="nombre input" id="nombre-input">
+    
     </div>
   </div>
-    <div class="metodo-pago">
-      <div class="efectivo pago" id="efectivo-pago"></div>
-      <div class="tarjeta pago" id="tarjeta-pago" ></div>
-    </div>
-
+   
   <div class="one">
     <label for="">MONTO A PAGAR EN RD$</label>
-    <div class="nombre input selected" id="nombre-input">
-    RD$  223,500.00
+    <div class="nombre input" id="monto_input">
+    
     </div>
   </div>
 
   </section>
   <script src="js/responsive.js"></script>
-  
+  <script src="js/funtion.js"></script>
 </body>
 </html>
